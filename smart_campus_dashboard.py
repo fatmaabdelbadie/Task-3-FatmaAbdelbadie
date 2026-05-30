@@ -1,18 +1,3 @@
-"""
-Smart Campus Environment Monitoring Dashboard
-Task 3: IoT Data Monitoring Dashboard
-Internship Project - DecodeLabs IoT Track
-
-Description:
-    A real-time IoT dashboard that simulates environmental sensor data
-    (temperature, humidity, CO2 levels, noise) across multiple campus zones.
-    Sensor readings update periodically, are stored in a local log file,
-    and visualized through live-updating charts.
-
-Author: [Your Name]
-Date: 2025
-"""
-
 import random
 import time
 import csv
@@ -23,16 +8,12 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from collections import deque
 
-# ─────────────────────────────────────────────
-#  CONFIGURATION
-# ─────────────────────────────────────────────
 ZONES = ["Library", "Lab A", "Cafeteria", "Lecture Hall"]
 UPDATE_INTERVAL = 2          # seconds between sensor reads
 MAX_HISTORY = 30             # data points shown on charts
 LOG_FILE = "campus_sensor_log.csv"
 RUNTIME_SECONDS = 120        # total simulation runtime
 
-# Normal ranges for each sensor type
 SENSOR_RANGES = {
     "temperature": (18.0, 32.0),   # °C
     "humidity":    (30.0, 75.0),   # %
@@ -40,7 +21,6 @@ SENSOR_RANGES = {
     "noise":       (30, 90),        # dB
 }
 
-# Alert thresholds
 ALERT_THRESHOLDS = {
     "temperature": {"low": 18.0, "high": 30.0},
     "humidity":    {"low": 35.0, "high": 70.0},
@@ -48,9 +28,6 @@ ALERT_THRESHOLDS = {
     "noise":       {"low": 0,    "high": 80},
 }
 
-# ─────────────────────────────────────────────
-#  SHARED STATE
-# ─────────────────────────────────────────────
 history = {
     zone: {
         "temperature": deque(maxlen=MAX_HISTORY),
@@ -65,10 +42,6 @@ alerts = []
 data_lock = threading.Lock()
 running = True
 
-
-# ─────────────────────────────────────────────
-#  SENSOR SIMULATION
-# ─────────────────────────────────────────────
 def simulate_sensor(sensor_type):
     """Generate a realistic sensor reading with occasional anomalies."""
     lo, hi = SENSOR_RANGES[sensor_type]
@@ -97,10 +70,6 @@ def check_alerts(zone, sensor, value):
         alerts.append((datetime.datetime.now().strftime("%H:%M:%S"), msg))
         print(msg)
 
-
-# ─────────────────────────────────────────────
-#  DATA COLLECTION THREAD
-# ─────────────────────────────────────────────
 def data_collection_loop():
     """Continuously polls simulated sensors and writes to CSV log."""
     global running
@@ -135,10 +104,6 @@ def data_collection_loop():
 
         time.sleep(UPDATE_INTERVAL)
 
-
-# ─────────────────────────────────────────────
-#  LIVE DASHBOARD (matplotlib)
-# ─────────────────────────────────────────────
 def build_dashboard():
     """Create and animate the live IoT monitoring dashboard."""
     fig, axes = plt.subplots(2, 2, figsize=(14, 8))
@@ -205,10 +170,6 @@ def build_dashboard():
     plt.show()
     return ani
 
-
-# ─────────────────────────────────────────────
-#  MAIN
-# ─────────────────────────────────────────────
 def main():
     global running
 
