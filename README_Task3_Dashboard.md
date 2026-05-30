@@ -1,21 +1,21 @@
-# 🌡️ Smart Campus Environment Monitoring Dashboard
+#  Smart Campus Environment Monitoring Dashboard
 ### IoT Internship Project — Task 3: IoT Data Monitoring Dashboard
 **DecodeLabs IoT Internship Track**
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
-This project implements a **real-time IoT Data Monitoring Dashboard** that simulates environmental sensors deployed across a university campus. Sensor data (temperature, humidity, CO₂ levels, and noise) is continuously generated, checked against safety thresholds, logged to a CSV file, and displayed on a live-updating multi-panel chart.
+This project implements a real-time IoT Data Monitoring Dashboard that simulates environmental sensors deployed across a university campus. Sensor data (temperature, humidity, CO₂ levels, and noise) is continuously generated, checked against safety thresholds, logged to a CSV file, and displayed on a live-updating multi-panel chart.
 
-This fulfills **Task 3** requirements:
-- ✅ Show sensor readings visually (live line charts per zone)
-- ✅ Update data periodically (every 2 seconds)
-- ✅ Use charts and tables (matplotlib live dashboard + CSV log)
+This fulfills the following requirements:
+- Show sensor readings visually (live line charts per zone)
+- Update data periodically (every 2 seconds)
+- Use charts and tables (matplotlib live dashboard + CSV log)
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 Sensor Simulation Layer
@@ -39,7 +39,7 @@ Live Dashboard (matplotlib animation)
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Tool | Purpose |
 |------|---------|
@@ -52,7 +52,7 @@ Live Dashboard (matplotlib animation)
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 ```bash
@@ -69,7 +69,7 @@ Close the chart window to end the session.
 
 ---
 
-## 📊 Dashboard Preview
+## Dashboard Preview
 
 The dashboard displays 4 live charts:
 
@@ -84,7 +84,7 @@ Each chart overlays all 4 campus zones as separate colored lines.
 
 ---
 
-## 📁 Output Files
+## Output Files
 
 | File | Description |
 |------|-------------|
@@ -101,7 +101,7 @@ timestamp,zone,temperature,humidity,co2,noise
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 Edit the constants at the top of `smart_campus_dashboard.py`:
 
@@ -113,7 +113,7 @@ RUNTIME_SECONDS = 120     # total simulation time
 
 ---
 
-## 🔔 Alert System
+## Alert System
 
 If any reading exceeds a safe threshold, a warning is printed to the console:
 ```
@@ -123,7 +123,7 @@ If any reading exceeds a safe threshold, a warning is printed to the console:
 
 ---
 
-## 💡 Key IoT Concepts Demonstrated
+## Key IoT Concepts Demonstrated
 
 - **Sensor data simulation** — realistic readings with occasional anomalies
 - **Periodic polling** — background thread collects data at fixed intervals
@@ -134,8 +134,8 @@ If any reading exceeds a safe threshold, a warning is printed to the console:
 
 ---
 
-## 👤 Author
+## Author
 
-**[Your Name]**  
-DecodeLabs IoT Internship — 2025  
-GitHub: [your-github-username]
+**[Fatma Abdelbadie]**  
+DecodeLabs IoT Internship — 2026  
+GitHub: [fatmaabdebadie]
